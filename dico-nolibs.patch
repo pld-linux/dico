@@ -1,0 +1,15 @@
+--- dico-2.5/configure.ac.orig	2018-01-28 15:23:36.000000000 +0100
++++ dico-2.5/configure.ac	2018-03-03 16:15:07.850842702 +0100
+@@ -48,9 +48,9 @@
+ AC_CONFIG_FILES([libltdl/Makefile])
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(socket, socket)
+-AC_CHECK_LIB(nsl, gethostbyaddr)
+-AC_CHECK_LIB(rt, nanosleep)
++AC_SEARCH_LIBS(socket, socket)
++AC_SEARCH_LIBS(gethostbyaddr, nsl)
++AC_SEARCH_LIBS(nanosleep, rt)
+ 
+ dnl Checks for header files.
+ AC_HEADER_DIRENT dnl not needed ?

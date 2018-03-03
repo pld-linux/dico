@@ -1,0 +1,15 @@
+--- dico-2.5/doc/dico.texi.orig	2018-01-25 22:14:31.000000000 +0100
++++ dico-2.5/doc/dico.texi	2018-03-03 19:09:53.340722977 +0100
+@@ -28,9 +28,9 @@
+ @ifinfo
+ @dircategory Dictionary
+ @direntry
+-* Dico: (dico).              A modular dictionary server package.
+-* dicod: (dico) Dicod.       Dictionary server program.
+-* dico: (dico) dico client.  Dictionary client program.
++* Dico: (dico).				A modular dictionary server package
++* dicod: (dico) Dicod.			Dictionary server program
++* dico: (dico) dico client.		Dictionary client program
+ @end direntry
+ @end ifinfo
+ 
