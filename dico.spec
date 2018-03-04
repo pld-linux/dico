@@ -30,7 +30,6 @@ BuildRequires:	python-devel >= 2
 BuildRequires:	readline-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
-#BuildRequires:	tk
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	%{name}-libs = %{version}-%{release}
@@ -124,6 +123,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
