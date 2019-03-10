@@ -5,12 +5,12 @@
 Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
-Version:	2.5
-Release:	2
+Version:	2.8
+Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
-# Source0-md5:	a50a8e9def28fc74bf41cca7931463b9
+# Source0-md5:	b1a9323c74ae3a48f8a08557d960f931
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/dico/
@@ -119,8 +119,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/dico/*.a
 %endif
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -133,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	libs -p /sbin/ldconfig
 %postun	libs -p /sbin/ldconfig
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog* NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/dico
@@ -165,7 +163,7 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libdico.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libdico.so.1
+%attr(755,root,root) %ghost %{_libdir}/libdico.so.2
 
 %files devel
 %defattr(644,root,root,755)
