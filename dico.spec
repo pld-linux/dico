@@ -5,12 +5,12 @@
 Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
-Version:	2.8
+Version:	2.9
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
-Source0:	http://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
-# Source0-md5:	b1a9323c74ae3a48f8a08557d960f931
+Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
+# Source0-md5:	5b73fb3a6d95fa2d5fcc81e9f579d223
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/dico/
@@ -19,7 +19,7 @@ BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools >= 0.18
 BuildRequires:	gsasl-devel >= 0.2.5
-BuildRequires:	guile-devel >= 5:1.8
+BuildRequires:	guile-devel >= 5:2.2.0
 BuildRequires:	libltdl-devel >= 2:2.4
 BuildRequires:	libtool >= 2:2.4
 BuildRequires:	ncurses-devel
