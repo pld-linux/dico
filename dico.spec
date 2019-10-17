@@ -6,7 +6,7 @@ Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
 Version:	2.9
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
