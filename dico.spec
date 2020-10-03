@@ -5,12 +5,12 @@
 Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
-Version:	2.9
-Release:	2
+Version:	2.10
+Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
-# Source0-md5:	5b73fb3a6d95fa2d5fcc81e9f579d223
+# Source0-md5:	26f2b5c2bf69f25c37b17abb27924ba6
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/dico/
@@ -119,6 +119,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/dico/*.a
 %endif
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -160,7 +162,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man5/dicod.conf.5*
 %{_mandir}/man8/dicod.8*
 
-%files libs
+%files libs -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libdico.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libdico.so.2
