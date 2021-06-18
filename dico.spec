@@ -5,19 +5,19 @@
 Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
-Version:	2.10
+Version:	2.11
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
-# Source0-md5:	26f2b5c2bf69f25c37b17abb27924ba6
+# Source0-md5:	f55fe3917abeb6fd74eccd3b0327d0d7
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/dico/
 BuildRequires:	WordNet-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
-BuildRequires:	gettext-tools >= 0.18
+BuildRequires:	autoconf >= 2.64
+BuildRequires:	automake >= 1:1.15
+BuildRequires:	gettext-tools >= 0.19
 BuildRequires:	gsasl-devel >= 0.2.5
 BuildRequires:	guile-devel >= 5:2.2.0
 BuildRequires:	libltdl-devel >= 2:2.4
@@ -26,7 +26,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pam-devel
 BuildRequires:	pcre-devel
-BuildRequires:	python-devel >= 2
+BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	readline-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
