@@ -1,7 +1,7 @@
---- dico-2.5/configure.ac.orig	2018-01-28 15:23:36.000000000 +0100
-+++ dico-2.5/configure.ac	2018-03-03 16:15:07.850842702 +0100
-@@ -48,9 +48,9 @@
- AC_CONFIG_FILES([libltdl/Makefile])
+--- dico-2.11/configure.ac.orig	2021-06-19 07:10:22.576405899 +0200
++++ dico-2.11/configure.ac	2021-06-19 07:11:04.548583966 +0200
+@@ -46,9 +46,9 @@
+ LTDL_INIT([nonrecursive])
  
  dnl Checks for libraries.
 -AC_CHECK_LIB(socket, socket)
