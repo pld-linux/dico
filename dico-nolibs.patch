@@ -1,14 +1,25 @@
---- dico-2.11/configure.ac.orig	2021-06-19 07:10:22.576405899 +0200
-+++ dico-2.11/configure.ac	2021-06-19 07:11:04.548583966 +0200
-@@ -46,9 +46,9 @@
+--- dico-2.12/configure.boot.orig	2024-12-31 10:30:59.000000000 +0100
++++ dico-2.12/configure.boot	2025-01-19 09:06:24.922554822 +0100
+@@ -55,8 +55,8 @@ LT_INIT([dlopen])
  LTDL_INIT([nonrecursive])
  
  dnl Checks for libraries.
 -AC_CHECK_LIB(socket, socket)
--AC_CHECK_LIB(nsl, gethostbyaddr)
 -AC_CHECK_LIB(rt, nanosleep)
 +AC_SEARCH_LIBS(socket, socket)
-+AC_SEARCH_LIBS(gethostbyaddr, nsl)
++AC_SEARCH_LIBS(nanosleep, rt)
+ 
+ dnl Checks for header files.
+ AC_HEADER_DIRENT dnl not needed ?
+--- dico-2.12/configure.ac.orig	2024-12-31 10:31:12.000000000 +0100
++++ dico-2.12/configure.ac	2025-01-19 10:02:45.670906403 +0100
+@@ -46,8 +46,8 @@ LT_INIT([dlopen])
+ LTDL_INIT([nonrecursive])
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(socket, socket)
+-AC_CHECK_LIB(rt, nanosleep)
++AC_SEARCH_LIBS(socket, socket)
 +AC_SEARCH_LIBS(nanosleep, rt)
  
  dnl Checks for header files.

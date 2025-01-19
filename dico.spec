@@ -5,18 +5,18 @@
 Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
-Version:	2.11
-Release:	5
+Version:	2.12
+Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
-# Source0-md5:	f55fe3917abeb6fd74eccd3b0327d0d7
+# Source0-md5:	db97706e7581f3ef26e0ae4c14480f40
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/dico/
 BuildRequires:	WordNet-devel
-BuildRequires:	autoconf >= 2.64
-BuildRequires:	automake >= 1:1.15
+BuildRequires:	autoconf >= 2.71
+BuildRequires:	automake >= 1:1.16.5
 BuildRequires:	gettext-tools >= 0.19
 BuildRequires:	gsasl-devel >= 0.2.5
 BuildRequires:	guile-devel >= 5:2.2.0
@@ -26,6 +26,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pam-devel
 BuildRequires:	pcre-devel
+BuildRequires:	perl-base
 BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	readline-devel
 BuildRequires:	tar >= 1:1.22
@@ -92,10 +93,12 @@ Statyczna biblioteka GNU Dico.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
+# configure.ac isn't rebuildable using files from dist tarball
+#./bootstrap --modules --skip-reconfig
 %{__libtoolize}
 %{__aclocal} -I m4 -I am -I grecs/am -I gint -I imprimatur
 %{__autoconf}
@@ -144,6 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/dico/dictorg.so
 %attr(755,root,root) %{_libdir}/dico/echo.so
 %attr(755,root,root) %{_libdir}/dico/gcide.so
+%attr(755,root,root) %{_libdir}/dico/greek_kbd.so
 %attr(755,root,root) %{_libdir}/dico/guile.so
 %attr(755,root,root) %{_libdir}/dico/ldap.so
 %attr(755,root,root) %{_libdir}/dico/metaphone2.so
