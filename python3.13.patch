@@ -1,0 +1,20 @@
+--- dico-2.12/modules/python/python.c~	2024-10-15 11:34:20.000000000 +0200
++++ dico-2.12/modules/python/python.c	2025-03-24 23:04:50.733315742 +0100
+@@ -100,7 +100,7 @@
+ }
+ 
+ static PyTypeObject PySelectionKeyType = {
+-    PyObject_HEAD_INIT(&PyType_Type)
++    PyVarObject_HEAD_INIT(&PyType_Type, 0)
+     .tp_name = "DicoSelectionKey",
+     .tp_basicsize = sizeof (PySelectionKey),
+     .tp_dealloc = _PySelectionKey_dealloc,
+@@ -185,7 +185,7 @@
+ }
+ 
+ static PyTypeObject PyStrategyType = {
+-    PyObject_HEAD_INIT(&PyType_Type)
++    PyVarObject_HEAD_INIT(&PyType_Type, 0)
+     .tp_name = "DicoStrategy",
+     .tp_basicsize = sizeof (PyStrategy),
+     .tp_dealloc = _PyStrategy_dealloc,

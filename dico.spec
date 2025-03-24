@@ -6,13 +6,14 @@ Summary:	GNU Dico - flexible implementation of DICT server
 Summary(pl.UTF-8):	GNU Dico - elastyczna implementacja serwera DICT
 Name:		dico
 Version:	2.12
-Release:	3
+Release:	4
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/dico/%{name}-%{version}.tar.xz
 # Source0-md5:	db97706e7581f3ef26e0ae4c14480f40
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-info.patch
+Patch2:		python3.13.patch
 URL:		http://www.gnu.org/software/dico/
 BuildRequires:	WordNet-devel
 BuildRequires:	autoconf >= 2.71
@@ -95,6 +96,7 @@ Statyczna biblioteka GNU Dico.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %build
 # configure.ac isn't rebuildable using files from dist tarball
